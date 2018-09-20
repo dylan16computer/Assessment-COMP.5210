@@ -20,8 +20,7 @@
 //         document.getElementById(`row${j+2}col6`).innerHTML = movAvg.toFixed(4);
 //         document.getElementById(`row${j+2}col7`).innerHTML = profLoss.toFixed(4);
 //     }
-//     document.getElementById(`row2col6`).innerHTML = "";
-//     document.getElementById(`row2col7`).innerHTML = "";
+//     
 // }
 
 function Calc()
@@ -30,38 +29,33 @@ function Calc()
     var sharePrice = [];
     var totalCost = 0;
     var totalVolume = 0;
-    for(let t = 0; t < 6; t++)
+    for(let i = 0; i < 6; i++)
     {
-        volume[t] = document.getElementById(`vol${t+1}`).value;
-        sharePrice[t] = document.getElementById(`pri${t+1}`).value;
-        var transCost = volume[t] * sharePrice[t];
+        volume[i] = document.getElementById(`vol${i+1}`).value;
+        sharePrice[i] = document.getElementById(`pri${i+1}`).value;
+        var transCost = volume[i] * sharePrice[i];
         totalCost += transCost;
-        totalVolume += volume[t];
+        totalVolume = Number(totalVolume + volume[i]);
         movAvg = totalCost / totalVolume;
-        var profLoss = 100 - (100 * (movAvg / sharePrice[t]));
-        document.getElementById(`row${t+2}col3`).innerHTML = `$${transCost}`;
-        document.getElementById(`row${t+2}col4`).innerHTML = `$${totalCost}`;
-        document.getElementById(`row${t+2}col5`).innerHTML = totalVolume;
-        document.getElementById(`row${t+2}col6`).innerHTML = movAvg.toFixed(4);
-        document.getElementById(`row${t+2}col7`).innerHTML = profLoss.toFixed(4);
-    } 
+        var profLoss = 100 - (100 * (movAvg / sharePrice[i]));
+        document.getElementById(`row${i+2}col3`).innerHTML = `$${transCost}`;
+        document.getElementById(`row${i+2}col4`).innerHTML = `$${totalCost}`;
+        document.getElementById(`row${i+2}col5`).innerHTML = totalVolume;
+        document.getElementById(`row${i+2}col6`).innerHTML = movAvg.toFixed(4);
+        document.getElementById(`row${i+2}col7`).innerHTML = profLoss.toFixed(4);
+    }
+    document.getElementById(`row2col6`).innerHTML = "";
+    document.getElementById(`row2col7`).innerHTML = "";
 }
 
 function ClearTable()
 {
-    for(q = 1; q < 7; q++)
+    for(let i = 2; i < 8; i++)
     {
-        document.getElementById(`vol${q}`).innerHTML = "";
-        document.getElementById(`vol${q}`).innerHTML = "";
-        document.getElementById(`vol${q}`).innerHTML = "";
-        document.getElementById(`vol${q}`).innerHTML = "";
-        document.getElementById(`vol${q}`).innerHTML = "";
-        document.getElementById(`vol${q}`).innerHTML = "";
-        document.getElementById(`pri${q}`).innerHTML = "";
-        document.getElementById(`pri${q}`).innerHTML = "";
-        document.getElementById(`pri${q}`).innerHTML = "";
-        document.getElementById(`pri${q}`).innerHTML = "";
-        document.getElementById(`pri${q}`).innerHTML = "";
-        document.getElementById(`pri${q}`).innerHTML = "";
+        document.getElementById(`row${i}col3`).innerHTML = "";
+        document.getElementById(`row${i}col4`).innerHTML = "";
+        document.getElementById(`row${i}col5`).innerHTML = "";
+        document.getElementById(`row${i}col6`).innerHTML = "";
+        document.getElementById(`row${i}col7`).innerHTML = "";
     }
 }
