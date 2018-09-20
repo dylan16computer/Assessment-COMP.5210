@@ -7,7 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="/Task2.css">
 </head>
-<body onLoad="presetValues()">
+<body>
     <table>
         <tr>
             <td id="row1col1">Volume</div>
@@ -19,8 +19,8 @@
             <td id="row1col7">Profit/Loss (%)</div>
         </tr>
         <tr>
-            <td id="row2col1"></div>
-            <td id="row2col2"></div>
+            <td id="row2col1"><input type="number" id="vol1"></div>
+            <td id="row2col2"><input type="number" id="pri1"></div>
             <td id="row2col3"></div>
             <td id="row2col4"></div>
             <td id="row2col5"></div>
@@ -28,8 +28,8 @@
             <td id="row2col7"></div>
         </tr>
         <tr>
-            <td id="row3col1"></div>
-            <td id="row3col2"></div>
+            <td id="row3col1"><input type="number" id="vol2"></div>
+            <td id="row3col2"><input type="number" id="pri2"></div>
             <td id="row3col3"></div>
             <td id="row3col4"></div>
             <td id="row3col5"></div>
@@ -37,8 +37,8 @@
             <td id="row3col7"></div>
         </tr>
         <tr>
-            <td id="row4col1"></div>
-            <td id="row4col2"></div>
+            <td id="row4col1"><input type="number" id="vol3"></div>
+            <td id="row4col2"><input type="number" id="pri3"></div>
             <td id="row4col3"></div>
             <td id="row4col4"></div>
             <td id="row4col5"></div>
@@ -46,8 +46,8 @@
             <td id="row4col7"></div>
         </tr>
         <tr>
-            <td id="row5col1"></div>
-            <td id="row5col2"></div>
+            <td id="row5col1"><input type="number" id="vol4"></div>
+            <td id="row5col2"><input type="number" id="pri4"></div>
             <td id="row5col3"></div>
             <td id="row5col4"></div>
             <td id="row5col5"></div>
@@ -55,8 +55,8 @@
             <td id="row5col7"></div>
         </tr>
         <tr>
-            <td id="row6col1"></div>
-            <td id="row6col2"></div>
+            <td id="row6col1"><input type="number" id="vol5"></div>
+            <td id="row6col2"><input type="number" id="pri5"></div>
             <td id="row6col3"></div>
             <td id="row6col4"></div>
             <td id="row6col5"></div>
@@ -64,8 +64,8 @@
             <td id="row6col7"></div>
         </tr>
         <tr>
-            <td id="row7col1"></div>
-            <td id="row7col2"></div>
+            <td id="row7col1"><input type="number" id="vol6"></div>
+            <td id="row7col2"><input type="number" id="pri6"></div>
             <td id="row7col3"></div>
             <td id="row7col4"></div>
             <td id="row7col5"></div>
@@ -73,13 +73,8 @@
             <td id="row7col7"></div>
         </tr>
     </table>
-    <form>
-        How many shares would you like to purchase?
-        <input id="userInputVolume" type="text" name="inputVol">
-        What price?
-        <input id="userInputPrice" type="text" name="inputPrice">
-        <button type="button" onclick='calc()'>Click Me!</button>
-    </form>
+    <button type="button" onclick='Calc()'>Calculate</button>
+    <button type="button" onclick="ClearTable()">Clear Table</button>
     <script src="/Task2.js" defer></script>
 </body>
 </html>
