@@ -5,23 +5,23 @@ function presetValues()
     var totalCost = 0;
     var totalVolume = 0;
     var movAvg = 0;
-    var volPrice = 0;
     for(j = 0; j < volume.length; j++)
     {
         var transCost = volume[j] * sharePrice[j];
         totalCost += transCost;
         totalVolume += volume[j];
-        console.log(totalVolume);
-        volPrice += volume[j] * sharePrice;
-        console.log(volPrice);
-        movAvg = volPrice / totalVolume;
+        movAvg = totalCost / totalVolume;
+        var profLoss = 100 - (100 * (movAvg / sharePrice[j]));
         document.getElementById(`row${j+2}col1`).innerHTML = volume[j];
         document.getElementById(`row${j+2}col2`).innerHTML = sharePrice[j];
         document.getElementById(`row${j+2}col3`).innerHTML = `$${transCost}`;
         document.getElementById(`row${j+2}col4`).innerHTML = `$${totalCost}`;
         document.getElementById(`row${j+2}col5`).innerHTML = totalVolume;
-        document.getElementById(`row${j+2}col6`).innerHTML = movAvg;
+        document.getElementById(`row${j+2}col6`).innerHTML = movAvg.toFixed(4);
+        document.getElementById(`row${j+2}col7`).innerHTML = profLoss.toFixed(4);
     }
+        document.getElementById(`row2col6`).innerHTML = "";
+        document.getElementById(`row2col7`).innerHTML = "";
 }
 
 function calc()
