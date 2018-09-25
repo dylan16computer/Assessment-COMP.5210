@@ -21,6 +21,19 @@ function Calc()
     }
     document.getElementById(`row2col6`).innerHTML = "";
     document.getElementById(`row2col7`).innerHTML = "";
+    for(let i = 1; i < 3; i++)
+    {
+        for(let j = 2; j < 8; j++)
+        {
+            if(document.getElementById(`row${j}col${i}`).value == null)
+            {
+                for(let q = 3; q < 8; q++)
+                {
+                    document.getElementById(`row${j}col${q}`).innerHTML = "";
+                }
+            }
+        }
+    }
 }
 
 function ClearTable()
