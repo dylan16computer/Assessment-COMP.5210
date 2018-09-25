@@ -23,13 +23,13 @@ function Calc()
     document.getElementById(`row2col7`).innerHTML = "";
     for(let i = 1; i < 3; i++)
     {
-        for(let j = 2; j < 8; j++)
+        for(let j = 1; j < 7; j++)
         {
-            if(document.getElementById(`row${j}col${i}`).value == null)
+            if(document.getElementById(`vol${j}`).value == "" || document.getElementById(`pri${j}`).value == "")
             {
                 for(let q = 3; q < 8; q++)
                 {
-                    document.getElementById(`row${j}col${q}`).innerHTML = "";
+                    document.getElementById(`row${j+1}col${q}`).innerHTML = "";
                 }
             }
         }
